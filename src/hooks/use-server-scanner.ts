@@ -2,15 +2,27 @@ import React, { useState, useEffect, useContext } from 'react'
 
 import { URL, X_RAPID_API_HOST } from "../api";
 import { ServerScannerContext } from "../context/ServerScanner";
+import { ContextValue } from "../context/types";
 
-const useServerScanner = ({ host, queryPort }) => {
+type UseServerScannerProps = {
+  host: string | undefined
+  queryPort: string | undefined
+};
+
+type FetchServerProps = {
+  host: string
+  queryPort: string
+  apiKey: string
+}
+
+const useServerScanner = ({ host, queryPort }: UseServerScannerProps) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const { apiKey } = useContext(ServerScannerContext);
+  const { apiKey }: ContextValue = useContext(ServerScannerContext);
 
   useEffect(() => {
-    const fetchServer = async ({ host, queryPort, apiKey }) => {
+    const fetchServer = async ({ host, queryPort, apiKey }: FetchServerProps) => {
       const url = `${URL}/${host}/${queryPort}`;
       const response = await fetch(url, {
         method: "GET",

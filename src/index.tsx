@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ServerScannerProvider apiKey={process.env.REACT_APP_X_RAPIDAPI_KEY}>
+  <ServerScannerProvider apiKey={process.env.REACT_APP_X_RAPIDAPI_KEY || ""}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
