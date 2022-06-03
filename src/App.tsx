@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import useServerScanner from "./hooks/use-server-scanner";
+import { ServerScannerResponse } from "./types";
 
 function App() {
+  const { data, error }: ServerScannerResponse = useServerScanner({ 
+    host: process.env.REACT_APP_VRISING_HOST, 
+    queryPort: process.env.REACT_APP_VRISING_QUERY_PORT 
+  });
+
+  console.log(data)
+
+  function renderData({ data, error }: ServerScannerResponse) {
+    if (data === null && error === null) return "Loading...";
+    else if (data=== null && error) return error;
+    else if (error === null && data) return JSON.stringify(data, null, 2);
+    else return "Something went wrong..."
+  }
+
+  if (error) return null;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ 
+      minHeight: "100vh", 
+      width: "100%", 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      }}
+    >
+      <pre>
+        {renderData({ data, error })}
+      </pre>
     </div>
   );
 }
