@@ -6,7 +6,7 @@ type Player = {
   }
 }
 
-type ServerScannerData = {
+export type ServerScannerData = {
   bots: []
   connect: string
   map: string
@@ -15,6 +15,7 @@ type ServerScannerData = {
   password: boolean
   ping: number
   players: Player[]
+  message: string
 }
 
 export type ServerScannerResponse = {
