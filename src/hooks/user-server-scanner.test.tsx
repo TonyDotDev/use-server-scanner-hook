@@ -9,18 +9,22 @@ describe("useServerScanner hook", () => {
   const QUERY_PORT = "81223";
   const HOST = "12.99.192.122";
 
-  it('returns the correct data on successful query', () => {
+  const mockData = {
+    "name": "Valheim 2",
+    "map": "VRisingWorld",
+    "password": false,
+    "maxplayers": 10,
+    "players": [],
+    "bots": [],
+    "connect": "92.38.148.199:28200",
+    "ping": 187
+  };
 
-    const mockData = {
-      "name": "Valheim 2",
-      "map": "VRisingWorld",
-      "password": false,
-      "maxplayers": 10,
-      "players": [],
-      "bots": [],
-      "connect": "92.38.148.199:28200",
-      "ping": 187
-    };
+  const mockError = {
+    message: "Unauthorized"
+  }
+
+  it('returns the correct data on successful query', () => {
     
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockData); });
   
@@ -35,9 +39,6 @@ describe("useServerScanner hook", () => {
   });
 
   it('returns the correct error message', () => {
-    const mockError = {
-      message: "Unauthorized"
-    }
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockError); });
   
     const { result, rerender } = renderHook(
@@ -51,17 +52,6 @@ describe("useServerScanner hook", () => {
   });
 
   it('passes the correct arguments to customFetch', () => {
-    const mockData = {
-      "name": "Valheim 2",
-      "map": "VRisingWorld",
-      "password": false,
-      "maxplayers": 10,
-      "players": [],
-      "bots": [],
-      "connect": "92.38.148.199:28200",
-      "ping": 187
-    };
-
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockData); });
   
     const { result, rerender } = renderHook(

@@ -9,8 +9,6 @@ function App() {
     queryPort: process.env.REACT_APP_VRISING_QUERY_PORT 
   });
 
-  console.log(data)
-
   function renderData({ data, error }: ServerScannerResponse) {
     if (data === null && error === null) return "Loading...";
     else if (data=== null && error) return error;
