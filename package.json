@@ -1,5 +1,5 @@
 {
-  "name": "vrising-use-server-scanner-hook",
+  "name": "@vrising/use-server-scanner-hook",
   "version": "0.1.0",
   "main": "lib.js",
   "dependencies": {
