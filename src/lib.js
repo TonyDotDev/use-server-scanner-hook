@@ -3,5 +3,5 @@ import { ServerScannerProvider } from "./context/ServerScanner";
 
 export {
   useServerScanner,
-  ServerScannerProvider
-};
+  ServerScannerProvider,
+}
