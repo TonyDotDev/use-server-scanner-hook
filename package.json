@@ -42,5 +42,6 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^14.2.0"
-  }
+  },
+  "repository": "git://github.com/NeverEnder4/vrising-useServerScanner-hook.git"
 }
