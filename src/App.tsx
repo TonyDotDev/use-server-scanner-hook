@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useServerScanner from "./hooks/use-server-scanner";
-import { ServerScannerResponse } from "./types";
+import { ServerScannerResponse } from "./types/Data";
 
 function App() {
   const { data, error }: ServerScannerResponse = useServerScanner({ 

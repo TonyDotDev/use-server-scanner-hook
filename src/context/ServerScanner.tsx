@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContextValue, ProviderProps } from "./types";
+import { ContextValue, ProviderProps } from "../types/Context";
 
 export const ServerScannerContext = React.createContext<ContextValue>({ apiKey: "" });
 

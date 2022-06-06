@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 
 import { URL, X_RAPID_API_HOST } from "../api";
 import { ServerScannerContext } from "../context/ServerScanner";
-import { ContextValue } from "../context/types";
-import { ServerScannerData } from "../types";
+import { ContextValue } from "../types/Context";
+import { ServerScannerData } from "../types/Data";
 
 type UseServerScannerProps = {
   host: string | undefined

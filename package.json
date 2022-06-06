@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:lib": "rm -rf ./lib && tsc --outDir ./lib && rm -rf ./lib/types"
   },
   "eslintConfig": {
     "extends": [
@@ -43,8 +44,6 @@
     "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^14.2.0"
   },
-  "repository": "git://github.com/NeverEnder4/vrising-useServerScanner-hook.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/neverender4"
-  }
+  "repository": "git://github.com/neverender4/vrising-useServerScanner-hook.git",
+  "registry": ""
 }
