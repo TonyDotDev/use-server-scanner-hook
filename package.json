@@ -1,5 +1,5 @@
 {
-  "name": "NeverEnder4/use-server-scanner-hook",
+  "name": "@NeverEnder4/use-server-scanner-hook",
   "version": "0.1.0",
   "main": "lib.js",
   "dependencies": {
