@@ -1,7 +1,7 @@
 {
-  "name": "use-server-scanner-hook",
-  "version": "0.1.0",
-  "main": "lib.js",
+  "name": "@NeverEnder4/use-server-scanner-hook",
+  "version": "0.1.2",
+  "main": "./lib/main.js",
   "dependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.38",
@@ -45,5 +45,7 @@
     "@testing-library/user-event": "^14.2.0"
   },
   "repository": "git://github.com/neverender4/vrising-useServerScanner-hook.git",
-  "registry": ""
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
