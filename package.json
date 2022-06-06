@@ -47,5 +47,6 @@
   "repository": "git://github.com/neverender4/vrising-useServerScanner-hook.git",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "license": "MIT"
 }
