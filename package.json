@@ -1,5 +1,5 @@
 {
-  "name": "@NeverEnder4/use-server-scanner-hook",
+  "name": "use-server-scanner-hook",
   "version": "0.1.0",
   "main": "lib.js",
   "dependencies": {
@@ -43,5 +43,8 @@
     "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^14.2.0"
   },
-  "repository": "git://github.com/NeverEnder4/vrising-useServerScanner-hook.git"
+  "repository": "git://github.com/NeverEnder4/vrising-useServerScanner-hook.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/neverender4"
+  }
 }
