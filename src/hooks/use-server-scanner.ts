@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import { URL, X_RAPID_API_HOST } from "../api";
 import { ServerScannerContext } from "../context/ServerScanner";
@@ -30,6 +30,7 @@ const useServerScanner = ({ host, queryPort, customFetch }: UseServerScannerProp
   }
 
   useEffect(() => {
+    console.log("EFFECTED")
     const fetchServer = async ({ host, queryPort, apiKey, onResponse }: FetchServerProps) => {
       const url = `${URL}/${host}/${queryPort}`;
       const response = await fetch(url, {
@@ -52,7 +53,7 @@ const useServerScanner = ({ host, queryPort, customFetch }: UseServerScannerProp
     
     else fetchServer({ host, queryPort, apiKey, onResponse });
     
-  }, [host, queryPort, apiKey]);
+  }, [host, queryPort, apiKey, customFetch]);
 
   return { data, error };
 };

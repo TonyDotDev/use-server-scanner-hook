@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import useServerScanner from "./hooks/use-server-scanner";
 import { ServerScannerResponse } from "./types/Data";
