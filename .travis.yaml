@@ -6,4 +6,8 @@ language: node_js
    - node_modules
  script:
  - npm test
- - npm run publish
+ deploy:
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+ on:
+  branch: main
