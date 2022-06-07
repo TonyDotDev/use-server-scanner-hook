@@ -1,6 +1,6 @@
 {
   "name": "@vrisingdev/use-server-scanner-hook",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "./lib/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
