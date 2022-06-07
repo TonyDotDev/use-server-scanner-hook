@@ -3,6 +3,7 @@
   "version": "0.1.7",
   "main": "./lib/main.js",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.38",
     "@types/react": "^18.0.10",
@@ -20,7 +21,8 @@
     "eject": "react-scripts eject",
     "build:lib": "rm -rf ./lib && tsc --outDir ./lib && rm -rf ./lib/types",
     "version:patch": "npm version patch",
-    "publish": "npm run build:lib && npm publish"
+    "publish": "npm run build:lib && npm publish",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -41,10 +43,18 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.0",
-    "@testing-library/user-event": "^14.2.0"
+    "@testing-library/user-event": "^14.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-sonarjs": "^0.13.0"
   },
   "repository": "git://github.com/neverender4/vrising-useServerScanner-hook.git",
   "publishConfig": {
