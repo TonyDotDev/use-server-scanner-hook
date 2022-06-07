@@ -3,13 +3,16 @@ node_js:
   - 14.16.1
 jobs:
   include:
+    - stage: Test
+      script:
+        - npm test
     - stage: Publish
       script: 
         - npm run build:lib
       deploy:
         provider: npm
         email: '$NPM_EMAIL'
-        api_key: '$NPM_TOKEN'
+        api_key: '$NPM_API_TOKEN'
         skip_cleanup: true
         on:
           branch: main
