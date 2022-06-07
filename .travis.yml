@@ -3,9 +3,6 @@ node_js:
   - 14.16.1
 jobs:
   include:
-    - stage: Test
-      script:
-        - npm test
     - stage: Publish
       script: 
         - npm run build:lib
