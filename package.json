@@ -1,6 +1,6 @@
 {
   "name": "@vrisingdev/use-server-scanner-hook",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "./lib/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -56,7 +56,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-sonarjs": "^0.13.0"
   },
-  "repository": "git://github.com/neverender4/vrising-useServerScanner-hook.git",
+  "repository": "git://github.com/neverender4/use-server-scanner-hook.git",
   "publishConfig": {
     "access": "public"
   },
