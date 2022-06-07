@@ -61,5 +61,5 @@ export default FunctionalComponent;
 
 ## License
 
-@vrisingdev/use-server-scanner-hook is licensed under the [MIT License](https://github.com/NeverEnder4/use-server-scanner-hook/LICENSE).
+@vrisingdev/use-server-scanner-hook is licensed under the [MIT License](https://github.com/NeverEnder4/use-server-scanner-hook/blob/main/LICENSE).
 
