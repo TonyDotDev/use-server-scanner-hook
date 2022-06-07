@@ -2,4 +2,13 @@ language: node_js
 node_js:
   - "stable"
 script:
- - npm test
+  - npm test
+before_deploy:
+  - npm run build:lib
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: $NPM_EMAIL
+  api_key: $NPM_API_TOKEN
+  on:
+    branch: main
