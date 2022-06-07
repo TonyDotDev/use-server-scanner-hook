@@ -1,10 +1,11 @@
 # @vrisingdev/use-server-scanner-hook
 
-Library for querying V Rising dedicated server data using ReactJS.
+Library for querying V Rising dedicated server data using ReactJS. This library is built with the [V Rising Server Scanner API](https://rapidapi.com/InfamyStudio/api/vrising-server-scanner). If you have not already, click the link and register for an API key.
 
-[![Version](https://img.shields.io/npm/v/open-source-npm-package-template.svg)](https://npmjs.org/package/@vrisingdev/use-server-scanner-hook)
+[![npm version](https://badge.fury.io/js/@vrisingdev%2Fuse-server-scanner-hook.svg)](https://badge.fury.io/js/@vrisingdev%2Fuse-server-scanner-hook)
+[![Build Status](https://app.travis-ci.com/NeverEnder4/use-server-scanner-hook.svg?branch=main)](https://app.travis-ci.com/NeverEnder4/use-server-scanner-hook)
 [![Downloads/week](https://img.shields.io/npm/dw/open-source-npm-package-template.svg)](https://npmjs.org/package/@vrisingdev/use-server-scanner-hook)
-[![License](https://img.shields.io/npm/l/open-source-npm-package-template.svg)](https://github.com/NeverEnder4/use-server-scanner-hook/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/NeverEnder4/use-server-scanner-hook/blob/main/package.json)
 
 ## Getting Started
 
@@ -20,11 +21,13 @@ Library for querying V Rising dedicated server data using ReactJS.
 ### Usage
 
 **index.js**
+
+Compose your entire app or the component that will be consuming the useServerScanner hook with the ServerScannerProvider component. Pass the V Rising Server Scanner API key to the provider via the apiKey prop.
+
 ```
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+...
+
 import { ServerScannerProvider } from "@vrisingdev/use-server-scanner-hook";
-import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,7 +40,11 @@ root.render(
 ```
 
 
+
 **FunctionalComponent.js**
+
+In a functional child component, import the useServerScanner hook and pass in a config object containing the host IP and query port of the V Rising server. This hook will return an object containing an error and data field. If the request is successful you will receive data. If the request fails, you'll receive an error message.
+
 ```
 import { useServerScanner } from "@vrisingdev/use-server-scanner-hook";
 
