@@ -1,13 +1,17 @@
 language: node_js
- node_js:
- - "stable"
- cache:
- directories:
-   - node_modules
- script:
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
  - npm test
- deploy:
+before_deploy:
+  - npm run build:lib
+deploy:
+  provider: npm
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
- on:
-  branch: main
+  email: $NPM_EMAIL
+  api_key: $NPM_API_TOKEN
+  on:
+    branch: main
