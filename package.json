@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:lib": "rm -rf ./lib && tsc --outDir ./lib && rm -rf ./lib/types"
+    "build:lib": "rm -rf ./lib && tsc --outDir ./lib && rm -rf ./lib/types",
+    "publish": "npm run build:lib && npm publish"
   },
   "eslintConfig": {
     "extends": [
