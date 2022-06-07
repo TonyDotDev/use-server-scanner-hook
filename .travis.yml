@@ -1,14 +1,17 @@
 language: node_js
 node_js:
   - 14.16.1
-script:
-  - npm test
-before_deploy:
-  - npm run build:lib
-deploy:
-  provider: npm
-  skip_cleanup: true
-  email: $NPM_EMAIL
-  api_key: $NPM_API_TOKEN
-  on:
-    branch: main
+jobs:
+  include:
+    - stage: Test
+      script:
+        - npm test
+    - stage: Publish
+      script: npm run build:lib
+      deploy:
+        provider: npm
+        email: '$NPM_EMAIL'
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true
+        on:
+          branch: main
