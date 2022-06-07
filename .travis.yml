@@ -7,7 +7,8 @@ jobs:
       script:
         - npm test
     - stage: Publish
-      script: npm run build:lib
+      script: 
+        - npm run build:lib
       deploy:
         provider: npm
         email: '$NPM_EMAIL'

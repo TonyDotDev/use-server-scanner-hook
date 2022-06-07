@@ -30,7 +30,6 @@ const useServerScanner = ({ host, queryPort, customFetch }: UseServerScannerProp
   }
 
   useEffect(() => {
-    console.log("EFFECTED")
     const fetchServer = async ({ host, queryPort, apiKey, onResponse }: FetchServerProps) => {
       const url = `${URL}/${host}/${queryPort}`;
       const response = await fetch(url, {
