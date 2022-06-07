@@ -8,7 +8,11 @@ import { Wrapper, API_KEY } from "./Wrapper";
 const QUERY_PORT = "81223";
 const HOST = "12.99.192.122";
 
-function renderServerScannerHook({ mockFetch }) {
+type RenderServerScannerHook = {
+  mockFetch: Function
+}
+
+function renderServerScannerHook({ mockFetch }: RenderServerScannerHook) {
   const { result } = renderHook(
     () => useServerScanner({ host: HOST, queryPort: QUERY_PORT, customFetch: mockFetch }),
     { 
