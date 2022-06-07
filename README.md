@@ -4,6 +4,7 @@ Library for querying V Rising dedicated server data using ReactJS. This library 
 
 [![npm version](https://badge.fury.io/js/@vrisingdev%2Fuse-server-scanner-hook.svg)](https://badge.fury.io/js/@vrisingdev%2Fuse-server-scanner-hook)
 [![Build Status](https://app.travis-ci.com/NeverEnder4/use-server-scanner-hook.svg?branch=main)](https://app.travis-ci.com/NeverEnder4/use-server-scanner-hook)
+[![Maintainability](https://api.codeclimate.com/v1/badges/54b88c18616286c47554/maintainability)](https://codeclimate.com/github/NeverEnder4/use-server-scanner-hook/maintainability)
 [![Downloads/week](https://img.shields.io/npm/dw/open-source-npm-package-template.svg)](https://npmjs.org/package/@vrisingdev/use-server-scanner-hook)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/NeverEnder4/use-server-scanner-hook/blob/main/package.json)
 
