@@ -5,35 +5,41 @@ import { ServerScannerProvider } from "../context/ServerScanner"
 import useServerScanner from "./use-server-scanner";
 import { Wrapper, API_KEY } from "./Wrapper";
 
+const QUERY_PORT = "81223";
+const HOST = "12.99.192.122";
+
+function renderServerScannerHook({ mockFetch }) {
+  const { result } = renderHook(
+    () => useServerScanner({ host: HOST, queryPort: QUERY_PORT, customFetch: mockFetch }),
+    { 
+      wrapper: Wrapper,
+    },
+  );
+
+  return result;
+};
+
+const mockData = {
+  "name": "Valheim 2",
+  "map": "VRisingWorld",
+  "password": false,
+  "maxplayers": 10,
+  "players": [],
+  "bots": [],
+  "connect": "92.38.148.199:28200",
+  "ping": 187
+};
+
+const mockError = {
+  message: "Unauthorized"
+};
+
 describe("useServerScanner hook", () => {
-  const QUERY_PORT = "81223";
-  const HOST = "12.99.192.122";
-
-  const mockData = {
-    "name": "Valheim 2",
-    "map": "VRisingWorld",
-    "password": false,
-    "maxplayers": 10,
-    "players": [],
-    "bots": [],
-    "connect": "92.38.148.199:28200",
-    "ping": 187
-  };
-
-  const mockError = {
-    message: "Unauthorized"
-  }
-
   it('returns the correct data on successful query', () => {
     
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockData); });
   
-    const { result, rerender } = renderHook(
-      () => useServerScanner({ host: HOST, queryPort: QUERY_PORT, customFetch: mockFetch }),
-      { 
-        wrapper: Wrapper,
-      },
-    );
+    const result = renderServerScannerHook({ mockFetch });
   
     expect(result.current.data).toStrictEqual(expect.objectContaining(mockData));
   });
@@ -41,12 +47,7 @@ describe("useServerScanner hook", () => {
   it('returns the correct error message', () => {
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockError); });
   
-    const { result, rerender } = renderHook(
-      () => useServerScanner({ host: HOST, queryPort: QUERY_PORT, customFetch: mockFetch }),
-      { 
-        wrapper: Wrapper,
-      },
-    );
+    const result = renderServerScannerHook({ mockFetch });
   
     expect(result.current.error).toBe(mockError.message);
   });
@@ -54,12 +55,7 @@ describe("useServerScanner hook", () => {
   it('passes the correct arguments to customFetch', () => {
     const mockFetch = jest.fn(({ onResponse }) => { onResponse(mockData); });
   
-    const { result, rerender } = renderHook(
-      () => useServerScanner({ host: HOST, queryPort: QUERY_PORT, customFetch: mockFetch }),
-      { 
-        wrapper: Wrapper,
-      },
-    );
+    const result = renderServerScannerHook({ mockFetch });
   
     expect(mockFetch.mock.calls[0][0].host).toBe(HOST);
     expect(mockFetch.mock.calls[0][0].queryPort).toBe(QUERY_PORT);
